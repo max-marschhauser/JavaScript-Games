@@ -1,0 +1,238 @@
+:root {
+  font-size: 15px;
+  --blue: hsl(210, 80%, 30%);
+  --green: hsl(120, 60%, 35%);
+  --red: hsl(0, 70%, 40%);
+  --yellow: hsl(60, 100%, 50%);
+  --gray: hsl(0, 0%, 80%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  height: 100vh;
+  background-color: var(--blue);
+}
+body h1 {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 70%;
+  box-shadow: 0 0 1rem var(--black);
+  background-color: var(--yellow);
+  text-align: center;
+  line-height: 2.5rem;
+  text-shadow: 0 0 0.1rem var(--black);
+  font-size: 2rem;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body h1 {
+    padding: 1rem;
+    line-height: 3.5rem;
+    font-size: 3rem;
+  }
+}
+body .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 95%;
+}
+body .game div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+body .game .select h2 {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  border: 0.1rem solid var(--black);
+  box-shadow: 0 0 0.5rem var(--black);
+  background-color: var(--yellow);
+  text-shadow: 0 0 0.1rem var(--black);
+  color: var(--black);
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .game .select h2 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+body .game .select .images {
+  display: flex;
+}
+@media only screen and (min-width: 1024px) and (min-height: 0px) {
+  body .game .select .images {
+    flex-direction: row;
+  }
+}
+body .game .select .images img {
+  width: 5rem;
+  height: 5rem;
+  box-shadow: 0 0 1rem var(--black);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .game .select .images img {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-height: 0px) {
+  body .game .select .images img {
+    width: 6rem;
+    height: 6rem;
+  }
+  body .game .select .images img:hover, body .game .select .images img:focus {
+    outline: 0.5rem solid var(--green);
+  }
+}
+@media only screen and (min-width: 1920px) and (min-height: 0px) {
+  body .game .select .images img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+body .game .score p {
+  padding: 0.75rem 1.5rem;
+  border-radius: 20%;
+  box-shadow: 0 0 0.5rem var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white);
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .game .score p {
+    padding: 1.5rem 3rem;
+    font-size: 4rem;
+  }
+}
+body .game .score .score-player {
+  background-color: var(--green);
+}
+body .game .score .score-comp {
+  background-color: var(--red);
+}
+body .game .vs h2 {
+  padding: 0.25rem 0.5rem;
+  border: 0.1rem solid var(--black);
+  box-shadow: 0 0 0.5rem var(--black);
+  background-color: var(--yellow);
+  text-shadow: 0 0 0.1rem var(--black);
+  color: var(--black);
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .game .vs h2 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+body .game .vs .choice-player,
+body .game .vs .choice-comp {
+  width: 5rem;
+  height: 5rem;
+  background-position: center center;
+  background-size: contain;
+  box-shadow: 0 0 1.5rem var(--black);
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .game .vs .choice-player,
+body .game .vs .choice-comp {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+body .game .vs .choice-comp {
+  outline: 0.2rem solid var(--red);
+}
+body .game .vs .choice-player {
+  outline: 0.2rem solid var(--green);
+}
+body .game .vs .rock {
+  background-image: url(../../img/RockPaperScissors/rock.png);
+}
+body .game .vs .paper {
+  background-image: url(../../img/RockPaperScissors/paper.png);
+}
+body .game .vs .scissors {
+  background-image: url(../../img/RockPaperScissors/scissors.png);
+}
+body .result {
+  width: 80%;
+  border: 0.1rem solid var(--black);
+  padding-block: 0.5rem;
+  box-shadow: 0 0 0.5rem var(--black);
+  background-color: var(--yellow);
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .result {
+    width: 50%;
+    padding: 1rem;
+    font-size: 3rem;
+  }
+}
+body .result-player {
+  background-color: var(--green);
+  color: var(--white);
+}
+body .result-comp {
+  background-color: var(--red);
+  color: var(--white);
+}
+body .button {
+  width: 80%;
+}
+@media only screen and (min-width: 768px) and (min-height: 0px) {
+  body .button {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-height: 0px) {
+  body .button {
+    width: 20%;
+  }
+}
+body .button p {
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  box-shadow: 0 0 1rem var(--black);
+  text-shadow: 0 0 0.1rem var(--black);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--black);
+  text-align: center;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  body .button p {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+  }
+}
+body .button p:hover, body .button p:focus {
+  outline: none;
+  background-color: var(--black);
+  color: var(--gray);
+}
